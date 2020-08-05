@@ -9,7 +9,7 @@ int main(){
     ll n,d;
     scanf("%lld%lld",&n,&d);
     ll i;
-    struct position pq[200005];
+    struct position pq[200005]; //自分のパソコンだと200005で強制終了しちゃう。long longだから？
     for(i=0;i<n;i++){
         scanf("%lld%lld",&pq[i].x,&pq[i].y);
     }
