@@ -6,7 +6,7 @@ ll whitecount = 0;
 ll n;
 ll redposition=0;
 ll whiteposition=1;
-char c[2000];
+char c[200005];
 ll White(ll x){
     ll i;
     for(i=x;i<=redcount;i++){
