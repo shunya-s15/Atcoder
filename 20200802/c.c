@@ -3,5 +3,5 @@ typedef long long ll;
 int main(){
     ll k;
     scanf("%lld",&k);
-    
+    return 0;
 }
