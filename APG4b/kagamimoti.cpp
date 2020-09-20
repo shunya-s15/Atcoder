@@ -1,7 +1,27 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 int main(){
+    int N;
+    cin >> N;
+    vector<int> d(N);
+    int i;
+    for(i=0;i<N;i++){
+        cin >> d.at(i);
+    }
+    sort(d.begin(),d.end());
+    reverse(d.begin(),d.end());
+    int count = 1;
+    for(i=0;i<d.size()-1;i++){
+        if(d.at(i) > d.at(i+1)){
+            count++;
+        }
+    }
+    cout << count << endl;
+    return 0;
+}
+/*int main(){
     int N;
     cin >> N;
     vector<int> d(N);
@@ -26,4 +46,4 @@ int main(){
     }
     cout << count << endl;
     return 0;
-}
+}*/
