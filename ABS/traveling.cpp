@@ -31,6 +31,13 @@ bool move(int second,int x,int y,int g_x,int g_y){
         return false;
     }
 }*/
+int zettaiti(int x){
+    if(x>0){
+        return x;
+    }else{
+        return -x;
+    }
+}
 
 int main(){
     int n;
@@ -52,9 +59,26 @@ int main(){
         cout << "No" << endl;
     }*/
     int x=0,y=0,t=0;
-    bool ans=false;
+    bool ans=true;
     for(int i=0;i<n;i++){
-        if((t-(get<1>(goal.at(i))-x+(get<2>(goal.at(i))))))
+        int x_g = zettaiti(get<1>(goal.at(i)) - x);
+        int y_g = zettaiti(get<2>(goal.at(i)) - y);
+        int t_g = get<0>(goal.at(i)) - t;
+        x = get<1>(goal.at(i));
+        y = get<2>(goal.at(i));
+        t = get<0>(goal.at(i));
+        if((t_g-(x_g+y_g)) < 0){
+            ans = false;
+            break;
+        }else if((t_g-(x_g+y_g))%2 == 1){
+            ans = false;
+            break;
+        }
+    }
+    if(ans){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
     }
     return 0;
 }
