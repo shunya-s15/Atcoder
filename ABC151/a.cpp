@@ -1,0 +1,12 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    char c;
+    cin >> c;
+    c += 1;
+    cout << c << endl;
+    return 0;
+}
