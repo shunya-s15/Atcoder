@@ -27,7 +27,7 @@ int main(){
         }
     }
     for(int i=0;i<m;i++){
-        if(n != 1 && sc.at(i).first == 4-n && sc.at(i).second == 0){
+        if(n != 1 && sc.at(i).first == 1 && sc.at(i).second == 0){
             flag = false;
         }
     }
@@ -35,17 +35,17 @@ int main(){
     if(flag){
         for(int i=0;i<m;i++){
             if(sc.at(i).first == 1 && flag1){
-                ans += sc.at(i).second*njou(10,3-sc.at(i).first);
+                ans += sc.at(i).second*njou(10,n-sc.at(i).first);
                 flag1=false;
                 continue;
             }
             if(sc.at(i).first == 2 && flag2){
-                ans += sc.at(i).second*njou(10,3-sc.at(i).first);
+                ans += sc.at(i).second*njou(10,n-sc.at(i).first);
                 flag2=false;
                 continue;
             }
             if(sc.at(i).first == 3 && flag3){
-                ans += sc.at(i).second*njou(10,3-sc.at(i).first);
+                ans += sc.at(i).second*njou(10,n-sc.at(i).first);
                 flag3=false;
                 continue;
             }
@@ -61,8 +61,10 @@ int main(){
             keta=1;
         }
     }
-    if(n != 1 && n>keta){
-        ans += njou(10,n-1);
+    if(flag){
+        if(n != 1 && n>keta){
+            ans += njou(10,n-1);
+        }
     }
     if(flag){
         cout << ans << endl;
