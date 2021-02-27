@@ -20,6 +20,9 @@ int main(){
       return 0;
     }
     bt+=b.at(i)-a.at(i);
+    if(bt>n){
+      bt=n;
+    }
     now=b.at(i);
   }
   bt-=t-now;
